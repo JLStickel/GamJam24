@@ -40,7 +40,6 @@ public class EnemyBullet : MonoBehaviour
         if(Physics2D.Raycast(oldPos,curPos,dist, playerMask))
         {
             PlayerHit();
-            Destroy(gameObject);
         }
         
         RaycastHit2D hit= Physics2D.Raycast(oldPos, curPos, dist, enemyMask);
@@ -63,6 +62,27 @@ public class EnemyBullet : MonoBehaviour
 
     public void PlayerHit()
     {
+        Destroy(gameObject);
+    }
+    
+    public void EnemyHit()
+    {
+        Destroy(gameObject);
+    }
 
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+            PlayerHit();
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            if(collision.gameObject.GetComponent<Enemy>().guid != guid)
+            {
+                collision.transform.GetComponent<Enemy>().hp -= damage;
+                EnemyHit();
+            }
+        }
     }
 }

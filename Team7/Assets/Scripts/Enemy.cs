@@ -46,6 +46,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        patrolPoints = EnemyManager.Instance.ClosestPatrolPoint(transform.position);
+
         curPoint = patrolPoints[curPointNum];
     }
 
@@ -70,7 +73,7 @@ public class Enemy : MonoBehaviour
         float distanceToPoint = Vector3.Distance(transform.position, curPoint.position);
         if(distanceToPoint < minDistToPoint)
         {
-            if (curPointNum >= patrolPoints.Count)
+            if (curPointNum >= patrolPoints.Count-1)
             {
                 curPointNum = 0;
             }
@@ -99,7 +102,8 @@ public class Enemy : MonoBehaviour
     public void Shoot()
     {
         loadUpTime -= Time.deltaTime;
-
+        Vector3 dir = player.transform.position - transform.position;
+        transform.position += dir.normalized * speed /3 * Time.deltaTime;
         if (loadUpTime <= 0)
         {
             Vector3 targ = player.transform.position;
