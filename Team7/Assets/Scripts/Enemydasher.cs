@@ -68,10 +68,9 @@ public class Enemydasher : MonoBehaviour
         }
 
 
-
         if (hp <= 0)
         {
-            foreach (var item in droppedItems)
+            foreach (var item in patrolPoints)
                 Instantiate(item, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -146,8 +145,9 @@ public class Enemydasher : MonoBehaviour
     {
         isDashing = false;
     }
-
 }
+
+
 
 
 

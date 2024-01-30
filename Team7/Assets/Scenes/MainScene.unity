@@ -2792,13 +2792,17 @@ PrefabInstance:
       propertyPath: minDistToPoint
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: -1322570952916237977, guid: ae0c9b7f7a972164d9b9e9a10bc201dc, type: 3}
+      propertyPath: seePlayerRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6231400050339360440, guid: ae0c9b7f7a972164d9b9e9a10bc201dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5148087
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 6231400050339360440, guid: ae0c9b7f7a972164d9b9e9a10bc201dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39316458
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 6231400050339360440, guid: ae0c9b7f7a972164d9b9e9a10bc201dc, type: 3}
       propertyPath: m_LocalPosition.z

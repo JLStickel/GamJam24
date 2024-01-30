@@ -58,6 +58,15 @@ public class EnemyBullet : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+            else
+            {
+                if (hit.transform.GetComponent<Enemydasher>().guid != guid)
+                {
+                    hit.transform.GetComponent<Enemydasher>().hp -= damage;
+
+                    Destroy(gameObject);
+                }
+            }
         }
 
         oldPos = transform.position;
