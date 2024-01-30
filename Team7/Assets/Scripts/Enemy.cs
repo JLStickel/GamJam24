@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Important values")]
     public int hp;
     public System.Guid guid;
+    public List<GameObject> droppedItems = new List<GameObject>();
     [Header("Movement")]
     public float speed;
     [SerializeField]
@@ -37,6 +38,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+
+
     private void Awake()
     {
         loadUpTimeStart = loadUpTime;
@@ -62,7 +65,11 @@ public class Enemy : MonoBehaviour
             Shoot();
 
         if (hp <= 0)
+        {
+            foreach (var item in patrolPoints)
+                Instantiate(item, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
         FOV();
     }
 
