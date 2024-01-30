@@ -71,13 +71,6 @@ public class EnemyBullet : MonoBehaviour
 
                     Destroy(gameObject);
             }
-            else
-            {
-                
-                    hit.transform.GetComponent<HealthManager>().healthAmount -= damage;
-
-                    Destroy(gameObject);
-            }
         }
 
         oldPos = transform.position;

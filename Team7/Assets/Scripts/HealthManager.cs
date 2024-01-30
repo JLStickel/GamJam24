@@ -1,18 +1,21 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
     public System.Guid guid;
     public Image healthBar;
     public float healthAmount = 3f;
+    private float healthAmountMax;
     public float fillSpeed = 5f;
     public GameObject Player;
 
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        healthAmountMax = healthAmount;
     }
     void Update()
     {
@@ -27,11 +30,12 @@ public class HealthManager : MonoBehaviour
         }
 
         // smoother
-        float targetFillAmount = healthAmount / 3f;
+        float targetFillAmount = healthAmount / healthAmountMax;
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, targetFillAmount, Time.deltaTime * fillSpeed);
         if (healthAmount == 0f)
         {
-            Destroy(Player);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //Destroy(Player);
         }
     }
 
