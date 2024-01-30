@@ -9,6 +9,8 @@ public class EnemyBullet : MonoBehaviour
     public float speed;
     public Guid guid;
     public int damage;
+    public float startTime = 0.3f;
+    public bool active;
     [SerializeField]
     private float lifeTime = 15;
     private Vector3 curPos;
@@ -28,7 +30,12 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(!active)
+        {
+            startTime -= Time.deltaTime;
+            if (startTime <= 0)
+                active = true;
+        }
         transform.position +=transform.right* speed * Time.deltaTime;
 
         lifeTime -= Time.deltaTime;
@@ -48,34 +55,28 @@ public class EnemyBullet : MonoBehaviour
         }
         
         RaycastHit2D hit= Physics2D.Raycast(oldPos, curPos, dist, enemyMask);
-        if (hit == true)
+        if (hit == true && active)
         {
-            if (hit.transform.GetComponent<Enemy>() != null && guid != null)
+            if (hit.transform.GetComponent<Enemy>() != null)
             {
-                if (hit.transform.GetComponent<Enemy>().guid != guid)
-                {
+               
                     hit.transform.GetComponent<Enemy>().hp -= damage;
 
                     Destroy(gameObject);
-                }
             }
-            else if (hit.transform.GetComponent<Enemydasher>() != null && guid != null)
+            else if (hit.transform.GetComponent<Enemydasher>() != null)
             {
-                if (hit.transform.GetComponent<Enemydasher>().guid != guid)
-                {
+                
                     hit.transform.GetComponent<Enemydasher>().hp -= damage;
 
                     Destroy(gameObject);
-                }
             }
             else
             {
-                if (hit.transform.GetComponent<HealthManager>().guid != guid)
-                {
+                
                     hit.transform.GetComponent<HealthManager>().healthAmount -= damage;
 
                     Destroy(gameObject);
-                }
             }
         }
 
@@ -114,13 +115,23 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
             PlayerHit();
-        if(collision.gameObject.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("Enemy") && active)
         {
-            
-            if(collision.gameObject.GetComponent<Enemy>().guid != guid )
+
+
+            if (collision.transform.GetComponent<Enemy>() != null)
             {
+
                 collision.transform.GetComponent<Enemy>().hp -= damage;
-                EnemyHit();
+
+                Destroy(gameObject);
+            }
+            else if (collision.transform.GetComponent<Enemydasher>() != null)
+            {
+
+                collision.transform.GetComponent<Enemydasher>().hp -= damage;
+
+                Destroy(gameObject);
             }
         }
     }

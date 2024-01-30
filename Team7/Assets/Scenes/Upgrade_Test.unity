@@ -6434,6 +6434,10 @@ MonoBehaviour:
   waveSpawnerWave1:
   - waitTime: 5
     spawnedObjects:
+    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
+    - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
+  - waitTime: 5
+    spawnedObjects:
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
   spawnPositions:
