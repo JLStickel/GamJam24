@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemydasher : MonoBehaviour
 {
     [Header("Important values")]
-    public int hp;
+    public int hp = 3;
     public System.Guid guid;
     public List<GameObject> droppedItems = new List<GameObject>();
     [Header("Movement")]
@@ -40,12 +40,16 @@ public class Enemydasher : MonoBehaviour
     public float dashForce = 20;
     public float dashDuration = 0.2f;
 
+    public HealthManager healthManager;
+
 
     private void Awake()
     {
         loadUpTimeStart = loadUpTime;
         guid = System.Guid.NewGuid();
         player = GameObject.FindGameObjectWithTag("Player");
+        healthManager = GameObject.FindGameObjectWithTag("HealthManager").GetComponent<HealthManager>();
+
     }
     void Start()
     {
@@ -119,7 +123,7 @@ public class Enemydasher : MonoBehaviour
         isDashing = true;
 
         Vector3 startPos = transform.position;
-        Vector3 targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(20f, Vector3.Distance(transform.position, player.transform.position));
+        Vector3 targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(10f, Vector3.Distance(transform.position, player.transform.position));
         dashTime = Time.time + dashDuration;
 
         StartCoroutine(DashCoroutine(startPos, targetPos));
@@ -145,6 +149,30 @@ public class Enemydasher : MonoBehaviour
     {
         isDashing = false;
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            healthManager.TakeDamage(1f);
+            hp--;
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemy otherEnemy = collision.gameObject.GetComponent<Enemy>();
+            if (otherEnemy != null)
+            {
+ 
+                otherEnemy.TakeDamage(1);
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+    }
 }
 
 
@@ -152,5 +180,5 @@ public class Enemydasher : MonoBehaviour
 
 
 
-   
-   
+
+

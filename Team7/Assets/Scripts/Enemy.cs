@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Important values")]
-    public int hp;
+    public int hp =1;
     public System.Guid guid;
     public List<GameObject> droppedItems = new List<GameObject>();
     [Header("Movement")]
@@ -134,5 +134,25 @@ public class Enemy : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(transform.position, seePlayerRadius);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        { 
+            Enemydasher otherEnemy = collision.gameObject.GetComponent<Enemydasher>();
+            if (otherEnemy != null)
+            {
+                otherEnemy.TakeDamage(1);
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
     }
 }

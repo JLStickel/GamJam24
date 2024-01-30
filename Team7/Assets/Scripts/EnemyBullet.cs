@@ -17,6 +17,7 @@ public class EnemyBullet : MonoBehaviour
     public LayerMask enemyMask;
     private PlayerController playerC;
     private HealthManager healthM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,11 +59,20 @@ public class EnemyBullet : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-            else
+            else if (hit.transform.GetComponent<Enemydasher>() != null && guid != null)
             {
                 if (hit.transform.GetComponent<Enemydasher>().guid != guid)
                 {
                     hit.transform.GetComponent<Enemydasher>().hp -= damage;
+
+                    Destroy(gameObject);
+                }
+            }
+            else
+            {
+                if (hit.transform.GetComponent<HealthManager>().guid != guid)
+                {
+                    hit.transform.GetComponent<HealthManager>().healthAmount -= damage;
 
                     Destroy(gameObject);
                 }
