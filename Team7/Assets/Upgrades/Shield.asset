@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56e45e2c1e35f54c8a4bda0d0bf2a92, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  UpgradeText: Your speed will increase by 30%
+  UpgradeText: Gives you a shield which you can use with >RIght Mouse Button< to
+    relfect bullets

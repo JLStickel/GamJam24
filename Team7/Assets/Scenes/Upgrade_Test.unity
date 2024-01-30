@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: usingShield
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1990754396446384733, guid: 36aef8a2ce691e64e827da2fbf05ccb0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3544107346441743693, guid: 36aef8a2ce691e64e827da2fbf05ccb0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2374,7 +2378,7 @@ PrefabInstance:
     - target: {fileID: 5485061153108044111, guid: a558ce43fc2bbcb4eabe9f4c10f1a881, type: 3}
       propertyPath: Upgrades.Array.data[1].upgrade3UI
       value: 
-      objectReference: {fileID: 11400000, guid: 1a8494400dfc09941871b7a30aac3027, type: 2}
+      objectReference: {fileID: 11400000, guid: 98c392255ab50d8499deec024a7ca4d6, type: 2}
     - target: {fileID: 5485061153108044111, guid: a558ce43fc2bbcb4eabe9f4c10f1a881, type: 3}
       propertyPath: Upgrades.Array.data[0].Upgrade1.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2493,7 +2497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5485061153108044111, guid: a558ce43fc2bbcb4eabe9f4c10f1a881, type: 3}
       propertyPath: Upgrades.Array.data[1].Upgrade3.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IncreaseSpeed
+      value: ActivateShield
       objectReference: {fileID: 0}
     - target: {fileID: 5485061153108044111, guid: a558ce43fc2bbcb4eabe9f4c10f1a881, type: 3}
       propertyPath: Upgrades.Array.data[0].Upgrade1.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
