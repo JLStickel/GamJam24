@@ -59,7 +59,11 @@ public class Enemydasher : MonoBehaviour
     {
         if (Time.time >= cooldown)
         {
-            StartDash();
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+            if (distanceToPlayer <= 100f)
+            {
+                StartDash();
+            }
             cooldown = Time.time + 5f;
         }
 
@@ -71,19 +75,20 @@ public class Enemydasher : MonoBehaviour
                 Instantiate(item, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        
+
         if (!isDashing)
         {
+            
             Vector3 dir = player.transform.position - transform.position;
             transform.position += dir.normalized * speed / 3 * Time.deltaTime;
+           
         }
-
-        //if (!isDashing){StartDash()}
 
         if (isDashing && Time.time >= dashTime)
         {
             EndDash();
         }
+
     }
 
     public void Patrol()
@@ -107,31 +112,26 @@ public class Enemydasher : MonoBehaviour
     void StartDash()
     {
         isDashing = true;
+
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(20f, Vector3.Distance(transform.position, player.transform.position));
         dashTime = Time.time + dashDuration;
 
-        StartCoroutine(DashCoroutine());
+        StartCoroutine(DashCoroutine(startPos, targetPos));
     }
 
-    IEnumerator DashCoroutine()
+    IEnumerator DashCoroutine(Vector3 startPos, Vector3 targetPos)
     {
-        Vector3 startPos = transform.position;
-        Vector3 targetPos = player.transform.position;
         float elapsedTime = 0f;
 
         while (Time.time < dashTime)
         {
-
             transform.position = Vector3.Lerp(startPos, targetPos, elapsedTime / dashDuration);
-
-
             elapsedTime += Time.deltaTime;
-
             yield return null;
         }
 
-
         transform.position = targetPos;
-
         EndDash();
     }
 
@@ -142,3 +142,9 @@ public class Enemydasher : MonoBehaviour
     }
 
 }
+
+
+
+
+   
+   
