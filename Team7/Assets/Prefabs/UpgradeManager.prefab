@@ -163,7 +163,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5485061153108044111}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeChosen
+        m_MethodName: UseUpgrade2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5485061153108044111}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UseUpgrade2
+        m_MethodName: UpgradeChosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -963,7 +963,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5485061153108044111}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeChosen
+        m_MethodName: UseUpgrade1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -975,7 +975,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5485061153108044111}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UseUpgrade1
+        m_MethodName: UpgradeChosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1244,7 +1244,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5485061153108044111}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UpgradeChosen
+        m_MethodName: UseUpgrade3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1256,7 +1256,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 5485061153108044111}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: UseUpgrade3
+        m_MethodName: UpgradeChosen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3303e732779eefe479263b10e6032c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerXPLevel: 1
+  playerXPLevel: 0
   curPlayerXP: 1
   playerXPUI: 0
   neededXP: 100
