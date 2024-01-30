@@ -47,6 +47,7 @@ public class EnemyBullet : MonoBehaviour
         {
             if (hit.transform.GetComponent<Enemy>().guid != guid)
             {
+                Debug.Break();
                 hit.transform.GetComponent<Enemy>().hp -= damage;
 
                 Destroy(gameObject);

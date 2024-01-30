@@ -89,6 +89,12 @@ public class Enemydasher : MonoBehaviour
             EndDash();
         }
 
+        if (hp <= 0)
+        {
+            foreach (var item in patrolPoints)
+                Instantiate(item, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     public void Patrol()
