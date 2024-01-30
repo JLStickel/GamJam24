@@ -16,11 +16,12 @@ public class PlayerController : MonoBehaviour
     public bool isDashing = false;
     float dashTime;
     public bool invicibleDash;
-    [SerializeField] private GameObject shield;
+    public GameObject shield;
 
 
     private void Awake()
-    { 
+    {
+        
     }
 
     void Start()

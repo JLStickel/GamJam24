@@ -20,6 +20,8 @@ public class Shield : MonoBehaviour
         shieldUsageTimeStart = shieldUsageTime;
         shieldLoadupTimeStart = shieldLoadupTime;
         coll = GetComponent<Collider2D>();
+        coll.enabled = false;
+        model.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
@@ -30,9 +32,16 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canUseShield)
+        {
+            usingShield = true;
+
+            coll.enabled = true;
+            model.SetActive(true);
+        }
+            
         if(usingShield)
         {
-
             shieldUsageTime -= Time.deltaTime;
             if(shieldUsageTime<=0)
             {

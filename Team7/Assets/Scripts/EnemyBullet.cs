@@ -49,12 +49,14 @@ public class EnemyBullet : MonoBehaviour
         RaycastHit2D hit= Physics2D.Raycast(oldPos, curPos, dist, enemyMask);
         if (hit == true)
         {
-            if (hit.transform.GetComponent<Enemy>().guid != guid)
+            if (hit.transform.GetComponent<Enemy>() != null && guid != null)
             {
-                Debug.Break();
-                hit.transform.GetComponent<Enemy>().hp -= damage;
+                if (hit.transform.GetComponent<Enemy>().guid != guid)
+                {
+                    hit.transform.GetComponent<Enemy>().hp -= damage;
 
-                Destroy(gameObject);
+                    Destroy(gameObject);
+                }
             }
         }
 

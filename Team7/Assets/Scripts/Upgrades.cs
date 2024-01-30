@@ -40,4 +40,9 @@ public class Upgrades : MonoBehaviour
     {
         player.invicibleDash = true;
     }
+
+    public void ActivateShield()
+    {
+        player.shield.SetActive(true);
+    }
 }

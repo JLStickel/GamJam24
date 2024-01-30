@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canUseShield: 0
   usingShield: 0
+  shieldLoadupTime: 5
+  shieldUsageTime: 0.3
+  model: {fileID: 5253247104462295902}
 --- !u!61 &3399218139864279267
 BoxCollider2D:
   m_ObjectHideFlags: 0
