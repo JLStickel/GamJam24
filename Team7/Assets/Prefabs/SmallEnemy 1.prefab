@@ -137,8 +137,6 @@ MonoBehaviour:
   curPoint: {fileID: 0}
   patrolPoints: []
   state: 0
-  bullet: {fileID: 0}
-  shootPos: {fileID: 0}
   loadUpTime: 5
   seePlayerRadius: 100
   drawGiz: 0
