@@ -19,6 +19,12 @@ public class Upgrades : MonoBehaviour
     {
         healthM.healthAmount = maxHealth;
     }
+    
+    public void SetMaxHPAndAdd(float val)
+    {
+        maxHealth += val;
+        healthM.healthAmount = maxHealth;
+    }
 
     public void LongerDashLength()
     {
@@ -28,5 +34,10 @@ public class Upgrades : MonoBehaviour
     public void IncreaseSpeed()
     {
         player.speed *= 1.3f;
+    }
+
+    public void InvincibleDash()
+    {
+        player.invicibleDash = true;
     }
 }

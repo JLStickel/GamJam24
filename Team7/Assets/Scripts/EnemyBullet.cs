@@ -15,9 +15,13 @@ public class EnemyBullet : MonoBehaviour
     private Vector3 oldPos;
     public LayerMask playerMask;
     public LayerMask enemyMask;
+    private PlayerController playerC;
+    private HealthManager healthM;
     // Start is called before the first frame update
     void Start()
     {
+        playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        healthM = GameObject.FindGameObjectWithTag("HealthManager").GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -63,7 +67,19 @@ public class EnemyBullet : MonoBehaviour
 
     public void PlayerHit()
     {
-        Destroy(gameObject);
+        if (!playerC.invicibleDash  )
+        {
+            if (!playerC.isDashing)
+            {
+                healthM.healthAmount -= damage;
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            healthM.healthAmount -= damage;
+            Destroy(gameObject);
+        }
     }
     
     public void EnemyHit()
@@ -79,7 +95,8 @@ public class EnemyBullet : MonoBehaviour
             PlayerHit();
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            if(collision.gameObject.GetComponent<Enemy>().guid != guid)
+            
+            if(collision.gameObject.GetComponent<Enemy>().guid != guid )
             {
                 collision.transform.GetComponent<Enemy>().hp -= damage;
                 EnemyHit();
