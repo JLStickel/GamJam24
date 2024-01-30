@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886758993691394259}
   - component: {fileID: 7785645888204220152}
+  - component: {fileID: 2469942203901320881}
   - component: {fileID: 4477927589627828130}
   - component: {fileID: 5235905655170489983}
   m_Layer: 7
@@ -118,6 +119,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2469942203901320881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682691287188044264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fdcc838d4149b498999beeb79d08ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  droppedItems: []
+  speed: 0
+  minDistToPoint: 0
+  curPoint: {fileID: 0}
+  patrolPoints: []
+  state: 0
+  bullet: {fileID: 0}
+  shootPos: {fileID: 0}
+  loadUpTime: 0
+  seePlayerRadius: 0
+  drawGiz: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  player: {fileID: 0}
 --- !u!114 &4477927589627828130
 MonoBehaviour:
   m_ObjectHideFlags: 0

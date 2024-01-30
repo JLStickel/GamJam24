@@ -15,9 +15,13 @@ public class EnemyBullet : MonoBehaviour
     private Vector3 oldPos;
     public LayerMask playerMask;
     public LayerMask enemyMask;
+    private PlayerController playerC;
+    private HealthManager healthM;
     // Start is called before the first frame update
     void Start()
     {
+        playerC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        healthM = GameObject.FindGameObjectWithTag("HealthManager").GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -45,11 +49,23 @@ public class EnemyBullet : MonoBehaviour
         RaycastHit2D hit= Physics2D.Raycast(oldPos, curPos, dist, enemyMask);
         if (hit == true)
         {
-            if (hit.transform.GetComponent<Enemy>().guid != guid)
+            if (hit.transform.GetComponent<Enemy>() != null && guid != null)
             {
-                hit.transform.GetComponent<Enemy>().hp -= damage;
+                if (hit.transform.GetComponent<Enemy>().guid != guid)
+                {
+                    hit.transform.GetComponent<Enemy>().hp -= damage;
 
-                Destroy(gameObject);
+                    Destroy(gameObject);
+                }
+            }
+            else
+            {
+                if (hit.transform.GetComponent<Enemydasher>().guid != guid)
+                {
+                    hit.transform.GetComponent<Enemydasher>().hp -= damage;
+
+                    Destroy(gameObject);
+                }
             }
         }
 
@@ -62,7 +78,19 @@ public class EnemyBullet : MonoBehaviour
 
     public void PlayerHit()
     {
-        Destroy(gameObject);
+        if (!playerC.invicibleDash  )
+        {
+            if (!playerC.isDashing)
+            {
+                healthM.healthAmount -= damage;
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            healthM.healthAmount -= damage;
+            Destroy(gameObject);
+        }
     }
     
     public void EnemyHit()
@@ -78,7 +106,8 @@ public class EnemyBullet : MonoBehaviour
             PlayerHit();
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            if(collision.gameObject.GetComponent<Enemy>().guid != guid)
+            
+            if(collision.gameObject.GetComponent<Enemy>().guid != guid )
             {
                 collision.transform.GetComponent<Enemy>().hp -= damage;
                 EnemyHit();

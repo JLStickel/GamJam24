@@ -10,17 +10,23 @@ public class PlayerController : MonoBehaviour
     public float dashDuration = 0.2f; 
 
     Rigidbody2D rb;
+    Collider2D collider;
     float moveHorizontal;
     float moveVertical;
-    bool isDashing = false;
+    public bool isDashing = false;
     float dashTime;
+    public bool invicibleDash;
+    public GameObject shield;
+
 
     private void Awake()
-    { 
+    {
+        
     }
 
     void Start()
     {
+        collider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -50,6 +56,8 @@ public class PlayerController : MonoBehaviour
 
     void StartDash()
     {
+        if (invicibleDash)
+            collider.enabled = false;
         isDashing = true;
         dashTime = Time.time + dashDuration;
 
@@ -60,6 +68,7 @@ public class PlayerController : MonoBehaviour
 
     void EndDash()
     {
+        collider.enabled = true;
         isDashing = false;
         rb.velocity = Vector2.zero;
     }
