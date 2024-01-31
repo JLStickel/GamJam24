@@ -132,7 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  droppedItems: []
+  droppedItems:
+  - {fileID: 0}
   speed: 1
   minDistToPoint: 0.5
   curPoint: {fileID: 0}
@@ -144,8 +145,8 @@ MonoBehaviour:
   bullet: {fileID: 5913004265787517606, guid: 3f5a8673fe7b0ef4a8436a3cfbd634a5, type: 3}
   shootPos: {fileID: 8956312158693451320}
   loadUpTime: 1
-  seePlayerRadius: 8
-  drawGiz: 0
+  seePlayerRadius: 11
+  drawGiz: 1
   playerMask:
     serializedVersion: 2
     m_Bits: 64

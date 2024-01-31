@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
     {
         loadUpTime -= Time.deltaTime;
         Vector3 dir = player.transform.position - transform.position;
-        transform.position += dir.normalized * speed /3 * Time.deltaTime;
+        transform.position += dir.normalized * speed /2 * Time.deltaTime;
         if (loadUpTime <= 0)
         {
             Vector3 targ = player.transform.position;
