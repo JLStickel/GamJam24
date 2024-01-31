@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Important values")]
     public int hp =1;
     public System.Guid guid;
+    public string guidd;
     public List<GameObject> droppedItems = new List<GameObject>();
     [Header("Movement")]
     public float speed;
@@ -30,6 +31,10 @@ public class Enemy : MonoBehaviour
     public float loadUpTime;
     private float loadUpTimeStart;
 
+    [Header("Enemy overlap")]
+    public float enemyOverlapRadius;
+    public LayerMask enemyMask;
+    private Transform closestEnemy;
 
     [Header("FOV")]
     public float seePlayerRadius;
@@ -38,13 +43,15 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
-
+    Rigidbody2D rb;
 
     private void Awake()
     {
         loadUpTimeStart = loadUpTime;
         guid = System.Guid.NewGuid();
+        guidd = guid.ToString();
         player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
     }
     // Start is called before the first frame update
     void Start()
@@ -106,6 +113,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void EnemyOverlap()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, enemyOverlapRadius, enemyMask);
+        if(enemies!= null)
+        {
+            float closestDistance = Mathf.Infinity;
+            foreach(var item in enemies)
+            {
+                float dist = Vector3.Distance(transform.position , item.transform.position);
+                if(dist<closestDistance)
+                {
+                    closestDistance = dist;
+                    closestEnemy = item.transform;
+                }    
+            }
+
+            
+        }
+    }
+
     public void Shoot()
     {
         loadUpTime -= Time.deltaTime;
@@ -122,7 +149,7 @@ public class Enemy : MonoBehaviour
 
             float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
             Instantiate(bullet, shootPos.position, Quaternion.Euler(new Vector3(0, 0, angle)))
-                .GetComponent<EnemyBullet>().guid = guid;
+                .GetComponent<EnemyBullet>().shooterGuid = guid;
             loadUpTime = loadUpTimeStart;
         }
     }

@@ -22,6 +22,7 @@ public class EnemyBullet : MonoBehaviour
 
     public Guid shooterGuid;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,14 +58,20 @@ public class EnemyBullet : MonoBehaviour
         }
         
         RaycastHit2D hit= Physics2D.Raycast(oldPos, curPos, dist, enemyMask);
-        if (hit == true && active)
+        if (hit == true)
         {
             if (hit.transform.GetComponent<Enemy>() != null)
             {
-               
+
+                if (hit.collider.GetComponent<Enemy>().guid == shooterGuid && !active)
+                {
+                }
+                else
+                {
                     hit.transform.GetComponent<Enemy>().hp -= damage;
 
                     Destroy(gameObject);
+                }
             }
             else if (hit.transform.GetComponent<Enemydasher>() != null)
             {
