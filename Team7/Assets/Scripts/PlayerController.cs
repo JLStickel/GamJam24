@@ -10,11 +10,17 @@ public class PlayerController : MonoBehaviour
     public float dashDuration = 0.2f;
     public float dashCooldown = 2.0f;
 
+#region Events
+    public delegate void _playerEvents();
+    public event _playerEvents _startDash;
+    public event _playerEvents _endDash;
+
+#endregion
 
     Rigidbody2D rb;
     Collider2D collider;
-    float moveHorizontal;
-    float moveVertical;
+    public float moveHorizontal;
+    public float moveVertical;
     public bool canDash = true;
     public bool isDashing = false;
     float dashTime;
@@ -63,6 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
+            _startDash();
+
             if (invicibleDash)
                 collider.enabled = false;
             isDashing = true;
@@ -79,6 +87,7 @@ public class PlayerController : MonoBehaviour
 
     void EndDash()
     {
+        _endDash();
         collider.enabled = true;
         isDashing = false;
         rb.velocity = Vector2.zero;
