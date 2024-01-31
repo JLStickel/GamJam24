@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 1
-  startTime: 0.6
+  startTime: 0.7
   active: 0
   lifeTime: 15
   playerMask:

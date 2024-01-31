@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
     public float enemyOverlapRadius;
     public LayerMask enemyMask;
     private Transform closestEnemy;
+    private bool moveAway;
 
     [Header("FOV")]
     public float seePlayerRadius;
@@ -78,6 +79,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         FOV();
+        EnemyOverlap();
     }
 
     public void Patrol()
@@ -118,18 +120,22 @@ public class Enemy : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, enemyOverlapRadius, enemyMask);
         if(enemies!= null)
         {
-            float closestDistance = Mathf.Infinity;
-            foreach(var item in enemies)
+            if (enemies.Length > 1)
             {
-                float dist = Vector3.Distance(transform.position , item.transform.position);
-                if(dist<closestDistance)
+                float closestDistance = Mathf.Infinity;
+                foreach (var item in enemies)
                 {
-                    closestDistance = dist;
-                    closestEnemy = item.transform;
-                }    
-            }
+                    float dist = Vector3.Distance(transform.position, item.transform.position);
+                    if (dist < closestDistance && item.transform != transform)
+                    {
+                        closestDistance = dist;
+                        closestEnemy = item.transform;
+                    }
+                }
 
-            
+                Vector3 dir =   closestEnemy.position- transform.position;
+                transform.position -= dir.normalized * speed * 1.5f * Time.deltaTime;
+            }
         }
     }
 
@@ -140,18 +146,32 @@ public class Enemy : MonoBehaviour
         transform.position += dir.normalized * speed  * Time.deltaTime;
         if (loadUpTime <= 0)
         {
-            Vector3 targ = player.transform.position;
-            targ.z = 0f;
+            
+            
+            if(!Physics2D.Raycast(transform.position, dir, Vector3.Distance(transform.position,player.transform.position), enemyMask))
+            {
+                SpawnBullet();
+            }
 
-            Vector3 objectPos = transform.position;
-            targ.x = targ.x - objectPos.x;
-            targ.y = targ.y - objectPos.y;
 
-            float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
-            Instantiate(bullet, shootPos.position, Quaternion.Euler(new Vector3(0, 0, angle)))
-                .GetComponent<EnemyBullet>().shooterGuid = guid;
-            loadUpTime = loadUpTimeStart;
+            
         }
+    }
+
+    public void SpawnBullet()
+    {
+        Vector3 targ = player.transform.position;
+        targ.z = 0f;
+
+        Vector3 objectPos = transform.position;
+        targ.x = targ.x - objectPos.x;
+        targ.y = targ.y - objectPos.y;
+
+        float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+        Instantiate(bullet, shootPos.position, Quaternion.Euler(new Vector3(0, 0, angle)))
+                .GetComponent<EnemyBullet>().shooterGuid = guid;
+
+        loadUpTime = loadUpTimeStart;
     }
 
     private void OnDrawGizmos()
@@ -159,7 +179,7 @@ public class Enemy : MonoBehaviour
         if (drawGiz)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, seePlayerRadius);
+            Gizmos.DrawSphere(transform.position, enemyOverlapRadius);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

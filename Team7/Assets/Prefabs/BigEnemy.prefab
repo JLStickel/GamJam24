@@ -145,12 +145,12 @@ MonoBehaviour:
   bullet: {fileID: 5913004265787517606, guid: 3f5a8673fe7b0ef4a8436a3cfbd634a5, type: 3}
   shootPos: {fileID: 8956312158693451320}
   loadUpTime: 1
-  enemyOverlapRadius: 0
+  enemyOverlapRadius: 5
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   seePlayerRadius: 11
-  drawGiz: 0
+  drawGiz: 1
   playerMask:
     serializedVersion: 2
     m_Bits: 64
