@@ -14,7 +14,7 @@ public class DashManager : MonoBehaviour
 
     PlayerController playerController;
 
-
+    bool SlowMotionItem = false;
 
     public float targetTime = 1.0f;
 
@@ -23,6 +23,7 @@ public class DashManager : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         playerController = Player.GetComponent<PlayerController>();
         dashAmountMax = dashAmount;
+        SlowMotionItem = true;
     }
     void Update()
     {
@@ -36,7 +37,7 @@ public class DashManager : MonoBehaviour
             Load(1f);
         }
 
-        if (!playerController.isDashing && playerController.canDash)
+        if (!playerController.isDashing && playerController.canDash && SlowMotionItem == true)
         {
             Load(1f);
         }

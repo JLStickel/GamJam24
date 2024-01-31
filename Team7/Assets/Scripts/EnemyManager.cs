@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour
         get; private set;
     }
     public List<PatrolPoints> patrolWays = new List<PatrolPoints>();
+
     private void Awake()
     {
         Instance = this;

@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public float dashForce = 20;
     public float dashDuration = 0.2f;
     public float dashCooldown = 2.0f;
-
+    public float targetTime = 9000000.0f;
+    public float targetCooldown;
 
     Rigidbody2D rb;
     Collider2D collider;
@@ -25,18 +26,21 @@ public class PlayerController : MonoBehaviour
     DashManager dashManager;
 
     private void Awake()
-    {     
+    {
     }
 
     void Start()
     {
         collider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
-
+        Time.timeScale = 1f;
+        targetCooldown = 10f;
     }
 
     void Update()
     {
+        targetCooldown -= Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
             StartDash();
@@ -45,6 +49,18 @@ public class PlayerController : MonoBehaviour
         if (isDashing && Time.time >= dashTime)
         {
             EndDash();
+        }
+
+        targetTime -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && targetCooldown <= 0f)
+        {
+            SlowMotion();
+            targetCooldown = 10f;
+        }
+        if (targetTime <= 0.0f)
+        {
+            Time.timeScale = 1f;
         }
     }
 
@@ -88,5 +104,11 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void SlowMotion()
+    {
+        targetTime = 2.5f;
+        Time.timeScale = 0.5f;
     }
 }
