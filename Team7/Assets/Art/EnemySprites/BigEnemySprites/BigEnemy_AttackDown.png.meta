@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c96f362caab80949a7e80cdc57098db
+guid: ca5df0ccf65e90b40a19b64b7a65e74b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_WalkUp_0
+      name: BigEnemy_AttackDown_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
-        height: 27
+        width: 40
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd2674e8a0d9f5246b4df29f19da1802
-      internalID: 1244157417
+      spriteID: 124b8f76b178af04fa95ac0b6a25cb91
+      internalID: -1491476741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_WalkUp_1
+      name: BigEnemy_AttackDown_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 40
         y: 0
-        width: 27
-        height: 27
+        width: 40
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c62bbbdb51eab9b49bf3506b1ca65bfd
-      internalID: 712688573
+      spriteID: de5c94eebb8da6249a56d11fc2a37be5
+      internalID: -422863765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_WalkUp_2
+      name: BigEnemy_AttackDown_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 80
         y: 0
-        width: 27
-        height: 27
+        width: 40
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f8cd75ad6e2db4cbcd456a1f1fd6ef
-      internalID: 1677209178
+      spriteID: d3ec2dffdecfa4d42a3f22bf7264ceaf
+      internalID: -200846679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_WalkUp_3
+      name: BigEnemy_AttackDown_3
       rect:
         serializedVersion: 2
-        x: 81
+        x: 120
         y: 0
-        width: 27
-        height: 27
+        width: 40
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f848c74ce35a1a4cb3a502d1152241e
-      internalID: -1924524081
+      spriteID: 8e7113ad868f31544a96d0c51979d83c
+      internalID: -1908739035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_WalkUp_4
+      name: BigEnemy_AttackDown_4
       rect:
         serializedVersion: 2
-        x: 108
+        x: 160
         y: 0
-        width: 27
-        height: 27
+        width: 40
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f17c86d753c3924b8bfad78ad1f5ef4
-      internalID: 292977936
+      spriteID: 78ffdad0bc4deec43857eec60165bb83
+      internalID: -1246589145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_WalkUp_5
+      name: BigEnemy_AttackDown_5
       rect:
         serializedVersion: 2
-        x: 135
+        x: 200
         y: 0
-        width: 27
-        height: 27
+        width: 40
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c8846ee587742840abecc70878ad22f
-      internalID: 2132324097
+      spriteID: 89312d94d075f4c48b3cd86a781808ee
+      internalID: 580750962
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_WalkUp_0: 1244157417
-      Player_WalkUp_1: 712688573
-      Player_WalkUp_2: 1677209178
-      Player_WalkUp_3: -1924524081
-      Player_WalkUp_4: 292977936
-      Player_WalkUp_5: 2132324097
+      BigEnemy_AttackDown_0: -1491476741
+      BigEnemy_AttackDown_1: -422863765
+      BigEnemy_AttackDown_2: -200846679
+      BigEnemy_AttackDown_3: -1908739035
+      BigEnemy_AttackDown_4: -1246589145
+      BigEnemy_AttackDown_5: 580750962
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
