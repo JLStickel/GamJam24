@@ -14,8 +14,6 @@ public class Spawner : MonoBehaviour
     public List<Transform> spawnPositions = new List<Transform>();
     public Image waveBar;
     PlayerController player;
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,23 +30,17 @@ public class Spawner : MonoBehaviour
     {
         if (curWave == 1)
         {
-
-
             wave1Time -= Time.deltaTime;
             waveBar.fillAmount = 1 - (wave1Time / wave1TimeStart);
             waveSpawnerWave1[curObject].waitTime -= Time.deltaTime;
             if(waveSpawnerWave1[curObject].waitTime <= 0)
             {
-                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-                if (enemies.Length <= 4)
-                {
-                    for (int i = 0; i < waveSpawnerWave1[curObject].spawnedObjects.Count; i++)
-                        Instantiate(waveSpawnerWave1[curObject].spawnedObjects[i], spawnPositions[Random.Range(0, spawnPositions.Count - 1)].position, Quaternion.identity);
+                for (int i = 0; i < waveSpawnerWave1[curObject].spawnedObjects.Count; i++)
+                    Instantiate(waveSpawnerWave1[curObject].spawnedObjects[i], spawnPositions[Random.Range(0, spawnPositions.Count - 1)].position, Quaternion.identity);
 
-                    curObject++;
-                    if (curObject >= waveSpawnerWave1.Count)
-                        curWave = 2;
-                }
+                curObject++;
+                if (curObject >= waveSpawnerWave1.Count)
+                    curWave = 2;
             }
             if (wave1Time <= 0)
                 ChecklastEnemy();
