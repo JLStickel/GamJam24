@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
 
         if (hp <= 0)
         {
-            foreach (var item in patrolPoints)
+            foreach (var item in droppedItems)
                 Instantiate(item, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
     {
         loadUpTime -= Time.deltaTime;
         Vector3 dir = player.transform.position - transform.position;
-        transform.position += dir.normalized * speed /3 * Time.deltaTime;
+        transform.position += dir.normalized * speed  * Time.deltaTime;
         if (loadUpTime <= 0)
         {
             Vector3 targ = player.transform.position;

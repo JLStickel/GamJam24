@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
     public int curWave = 1;
+    public float wave1Time;
+    private float wave1TimeStart;
     public bool finishedCurrent = false;
     public int curObject = 0;
     public List<Spawn> waveSpawnerWave1 = new List<Spawn>();
     public List<Transform> spawnPositions = new List<Transform>();
+    public Image waveBar;
     // Start is called before the first frame update
     void Start()
     {
-
-
+        foreach(var item in waveSpawnerWave1)
+        {
+            wave1Time += item.waitTime;
+        }
+        wave1TimeStart = wave1Time;
     }
 
     // Update is called once per frame
@@ -21,6 +28,8 @@ public class Spawner : MonoBehaviour
     {
         if (curWave == 1)
         {
+            wave1Time -= Time.deltaTime;
+            waveBar.fillAmount = 1 - (wave1Time / wave1TimeStart);
             waveSpawnerWave1[curObject].waitTime -= Time.deltaTime;
             if(waveSpawnerWave1[curObject].waitTime <= 0)
             {

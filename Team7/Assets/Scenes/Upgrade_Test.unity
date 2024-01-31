@@ -6041,6 +6041,9 @@ MonoBehaviour:
     spawnedObjects:
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
+  - waitTime: 3
+    spawnedObjects:
+    - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
   spawnPositions:
   - {fileID: 6589034718761314003}
   - {fileID: 319912480}
