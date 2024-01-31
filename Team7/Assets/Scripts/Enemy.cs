@@ -78,8 +78,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         FOV();
-
-        EnemyOverlap();
     }
 
     public void Patrol()
@@ -120,22 +118,18 @@ public class Enemy : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, enemyOverlapRadius, enemyMask);
         if(enemies!= null)
         {
-            if (enemies.Length > 0)
+            float closestDistance = Mathf.Infinity;
+            foreach(var item in enemies)
             {
-                float closestDistance = Mathf.Infinity;
-                foreach (var item in enemies)
+                float dist = Vector3.Distance(transform.position , item.transform.position);
+                if(dist<closestDistance)
                 {
-                    float dist = Vector3.Distance(transform.position, item.transform.position);
-                    if (dist < closestDistance)
-                    {
-                        closestDistance = dist;
-                        closestEnemy = item.transform;
-                    }
-                }
-
-                Vector3 dir = closestEnemy.position - transform.position;
-                transform.position += dir.normalized * speed * 1.5f * Time.deltaTime;
+                    closestDistance = dist;
+                    closestEnemy = item.transform;
+                }    
             }
+
+            
         }
     }
 
@@ -165,7 +159,7 @@ public class Enemy : MonoBehaviour
         if (drawGiz)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, enemyOverlapRadius);
+            Gizmos.DrawSphere(transform.position, seePlayerRadius);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
