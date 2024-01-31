@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: f9d9be345d4b902438e0c617b37467be
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6f460ed09748a9644836ba4414afc2bf
+  - enabled: 1
+    path: Assets/Scenes/Enemy_Test.unity
+    guid: 0cbef44fcda65d3408ad16e5cf8d9845
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 1563f7741fbea914c879c5f74cc2feb5
+  - enabled: 1
+    path: Assets/Scenes/Upgrade_Test.unity
+    guid: c7061ef0afff16043aaa936b4ba1f0e9
   m_configObjects: {}

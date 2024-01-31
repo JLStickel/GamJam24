@@ -20,6 +20,8 @@ public class EnemyBullet : MonoBehaviour
     private PlayerController playerC;
     private HealthManager healthM;
 
+    public Guid shooterGuid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,13 +104,11 @@ public class EnemyBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
             PlayerHit();
-        if(collision.gameObject.CompareTag("Enemy") && active)
+        if (collision.gameObject.CompareTag("Enemy") && active)
         {
 
 
@@ -128,4 +128,6 @@ public class EnemyBullet : MonoBehaviour
             }
         }
     }
+
+
 }
