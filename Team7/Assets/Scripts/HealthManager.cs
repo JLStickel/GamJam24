@@ -42,12 +42,12 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         healthAmount -= damage;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 3);
+        healthAmount = Mathf.Clamp(healthAmount, 0, healthAmountMax);
     }
 
     public void Heal(float healingAmount)
     {
         healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 3);
+        healthAmount = Mathf.Clamp(healthAmount, 0, healthAmountMax);
     }
 }

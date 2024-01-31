@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   droppedItems:
-  - {fileID: 0}
+  - {fileID: 1278193615406659841, guid: 903410af2f717e74f8d501e00e32a551, type: 3}
   speed: 1
   minDistToPoint: 0.5
   curPoint: {fileID: 0}
