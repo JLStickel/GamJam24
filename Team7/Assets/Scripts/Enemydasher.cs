@@ -156,7 +156,7 @@ public class Enemydasher : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             healthManager.TakeDamage(1f);
-            hp--;
+            //hp--;
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
