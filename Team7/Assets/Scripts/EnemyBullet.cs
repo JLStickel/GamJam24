@@ -104,31 +104,27 @@ public class EnemyBullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
             PlayerHit();
-        else if (collision.gameObject.CompareTag("Enemy") && active)
+        if (collision.gameObject.CompareTag("Enemy") && active)
         {
-            Enemy enemy = collision.transform.GetComponent<Enemy>();
-            if (enemy != null)
+
+
+            if (collision.transform.GetComponent<Enemy>() != null)
             {
-                if (enemy.guid != shooterGuid)
-                {
-                    enemy.TakeDamage(damage);
-                    Destroy(gameObject);
-                }
+
+                collision.transform.GetComponent<Enemy>().hp -= damage;
+
+                Destroy(gameObject);
             }
-            else
+            else if (collision.transform.GetComponent<Enemydasher>() != null)
             {
-                Enemydasher enemyDasher = collision.transform.GetComponent<Enemydasher>();
-                if (enemyDasher != null && enemyDasher.guid != shooterGuid)
-                {
-                    enemyDasher.TakeDamage(damage);
-                    Destroy(gameObject);
-                }
+
+                collision.transform.GetComponent<Enemydasher>().hp -= damage;
+
+                Destroy(gameObject);
             }
         }
     }

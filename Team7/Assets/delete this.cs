@@ -4,39 +4,66 @@ using UnityEngine;
 
 public class deletethis : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+//    // Start is called before the first frame update
+//    void Start()
+//    {
         
-    }
+//    }
 
-    // Update is called once per frame
-    void Update()
-    {
+//    // Update is called once per frame
+//    void Update()
+//    {
         
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-            PlayerHit();
-        if (collision.gameObject.CompareTag("Enemy") && active)
-        {
+//    }
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if (collision.gameObject.CompareTag("Player"))
+//            PlayerHit();
+//        if (collision.gameObject.CompareTag("Enemy") && active)
+//        {
 
 
-            if (collision.transform.GetComponent<Enemy>() != null)
-            {
+//            if (collision.transform.GetComponent<Enemy>() != null)
+//            {
 
-                collision.transform.GetComponent<Enemy>().hp -= damage;
+//                collision.transform.GetComponent<Enemy>().hp -= damage;
 
-                Destroy(gameObject);
-            }
-            else if (collision.transform.GetComponent<Enemydasher>() != null)
-            {
+//                Destroy(gameObject);
+//            }
+//            else if (collision.transform.GetComponent<Enemydasher>() != null)
+//            {
 
-                collision.transform.GetComponent<Enemydasher>().hp -= damage;
+//                collision.transform.GetComponent<Enemydasher>().hp -= damage;
 
-                Destroy(gameObject);
-            }
-        }
-    }
+//                Destroy(gameObject);
+//            }
+//        }
+//    }
+
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if (collision.gameObject.CompareTag("Player"))
+//            PlayerHit();
+//        else if (collision.gameObject.CompareTag("Enemy") && active)
+//        {
+//            Enemy enemy = collision.transform.GetComponent<Enemy>();
+//            if (enemy != null)
+//            {
+//                if (enemy.guid != shooterGuid)
+//                {
+//                    enemy.TakeDamage(damage);
+//                    Destroy(gameObject);
+//                }
+//            }
+//            else
+//            {
+//                Enemydasher enemyDasher = collision.transform.GetComponent<Enemydasher>();
+//                if (enemyDasher != null && enemyDasher.guid != shooterGuid)
+//                {
+//                    enemyDasher.TakeDamage(damage);
+//                    Destroy(gameObject);
+//                }
+//            }
+//        }
+//    }
 }
