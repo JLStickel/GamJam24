@@ -329,3 +329,130 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 177164.911906 seconds.
+  path: Assets/Art/Main Menu/Main Menu backround2.png
+  artifactKey: Guid(d8cdf4dc318bdbe459a00bb8a7a553ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Main Menu/Main Menu backround2.png using Guid(d8cdf4dc318bdbe459a00bb8a7a553ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baa1e694222c7218c7338e129b614a12') in 0.096157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.561322 seconds.
+  path: Assets/Art/Main Menu/Main Menu backround5.png
+  artifactKey: Guid(9edd9d3ea8667c34ba9c14cd4fbc4634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Main Menu/Main Menu backround5.png using Guid(9edd9d3ea8667c34ba9c14cd4fbc4634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41d3e04fc4035c59793a09bd3820271a') in 0.015467 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.485791 seconds.
+  path: Assets/Art/Main Menu/Main Menu backround9.png
+  artifactKey: Guid(64662b34500224847ac5bdba6f3300cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Main Menu/Main Menu backround9.png using Guid(64662b34500224847ac5bdba6f3300cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c03361bb445d5b6f03495187b6cb7968') in 0.019582 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Art/Main Menu/Main Menu backround6.png
+  artifactKey: Guid(5b7e4cd103473e244b17877030de8620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Main Menu/Main Menu backround6.png using Guid(5b7e4cd103473e244b17877030de8620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f7d3fc66d066ef933ee13267cd9207') in 0.015743 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/Main Menu/Main Menu backround4.png
+  artifactKey: Guid(bae6403923c4c11459eaa40f9e6e3ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Main Menu/Main Menu backround4.png using Guid(bae6403923c4c11459eaa40f9e6e3ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '034e73560c17542249c822356d5d5df6') in 0.016407 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.250911 seconds.
+  path: Assets/Art/Effects/LightningMat.png
+  artifactKey: Guid(cc118be0937b3d44686cdbceb3df69e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Effects/LightningMat.png using Guid(cc118be0937b3d44686cdbceb3df69e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23a51f61b714bbea71147d92ba68e91d') in 0.012663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Art/Effects/SmallExplosionSheet.png
+  artifactKey: Guid(13d8413203bfb864498604391963bbb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Effects/SmallExplosionSheet.png using Guid(13d8413203bfb864498604391963bbb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29dc7db4e6ba1001790e41a7cc6c7330') in 0.018899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.474 seconds
+Refreshing native plugins compatible for Editor in 7.52 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.914 seconds
+Domain Reload Profiling: 2375ms
+	BeginReloadAssembly (147ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (246ms)
+		LoadAssemblies (298ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1915ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (517ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (335ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 8.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5742 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (391.3 KB). Loaded Objects now: 6433.
+Memory consumption went from 196.6 MB to 196.2 MB.
+Total: 3.900800 ms (FindLiveObjects: 0.457300 ms CreateObjectMapping: 0.176000 ms MarkObjects: 3.129300 ms  DeleteObjects: 0.136900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: a3ef5dd2817f97addfee359851a9dba5 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
