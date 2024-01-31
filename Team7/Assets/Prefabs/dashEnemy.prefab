@@ -144,7 +144,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   player: {fileID: 0}
-  dashForce: 5
+  dashForce: 3
   dashDuration: 0.2
   healthManager: {fileID: 0}
 --- !u!61 &8176579570400071422

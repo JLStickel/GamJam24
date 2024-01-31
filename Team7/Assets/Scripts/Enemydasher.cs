@@ -123,7 +123,7 @@ public class Enemydasher : MonoBehaviour
         isDashing = true;
 
         Vector3 startPos = transform.position;
-        Vector3 targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(10f, Vector3.Distance(transform.position, player.transform.position));
+        Vector3 targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(3f, Vector3.Distance(transform.position, player.transform.position));
         dashTime = Time.time + dashDuration;
 
         StartCoroutine(DashCoroutine(startPos, targetPos));

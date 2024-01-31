@@ -4571,11 +4571,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.179007
+      value: 22.13
       objectReference: {fileID: 0}
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.5292635
+      value: -14.85
       objectReference: {fileID: 0}
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4607,6 +4607,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477927589627828130, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: drawGiz
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
@@ -6169,31 +6173,25 @@ MonoBehaviour:
     spawnedObjects:
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
-    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
   - waitTime: 7
     spawnedObjects:
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
   - waitTime: 7
     spawnedObjects:
-    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
   - waitTime: 5
     spawnedObjects:
-    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
-    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
   - waitTime: 10
     spawnedObjects:
-    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
   - waitTime: 4
     spawnedObjects:
-    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
