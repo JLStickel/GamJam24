@@ -20,6 +20,8 @@ public class EnemyBullet : MonoBehaviour
     private PlayerController playerC;
     private HealthManager healthM;
 
+    public Guid shooterGuid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,24 +110,28 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
             PlayerHit();
-        if(collision.gameObject.CompareTag("Enemy") && active)
+        else if (collision.gameObject.CompareTag("Enemy") && active)
         {
-
-
-            if (collision.transform.GetComponent<Enemy>() != null)
+            Enemy enemy = collision.transform.GetComponent<Enemy>();
+            if (enemy != null)
             {
-
-                collision.transform.GetComponent<Enemy>().hp -= damage;
-
-                Destroy(gameObject);
+                if (enemy.guid != shooterGuid)
+                {
+                    enemy.TakeDamage(damage);
+                    Destroy(gameObject);
+                }
             }
-            else if (collision.transform.GetComponent<Enemydasher>() != null)
+            else
             {
-
-                collision.transform.GetComponent<Enemydasher>().hp -= damage;
-
-                Destroy(gameObject);
+                Enemydasher enemyDasher = collision.transform.GetComponent<Enemydasher>();
+                if (enemyDasher != null && enemyDasher.guid != shooterGuid)
+                {
+                    enemyDasher.TakeDamage(damage);
+                    Destroy(gameObject);
+                }
             }
         }
     }
+
+
 }

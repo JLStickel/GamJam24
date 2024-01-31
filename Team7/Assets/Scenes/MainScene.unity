@@ -1237,12 +1237,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.62878
+      objectReference: {fileID: 0}
+    - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.62878
+      objectReference: {fileID: 0}
+    - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.75252
+      objectReference: {fileID: 0}
+    - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.005639
+      value: -3.89
       objectReference: {fileID: 0}
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1679363
+      value: 3.86
       objectReference: {fileID: 0}
     - target: {fileID: 886758993691394259, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1278,6 +1290,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469942203901320881, guid: 758af228fc1a42944b66673d2130142e, type: 3}
       propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469942203901320881, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: seePlayerRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235905655170489983, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235905655170489983, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+      propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}

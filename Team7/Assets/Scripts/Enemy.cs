@@ -142,11 +142,14 @@ public class Enemy : MonoBehaviour
 
         }
         else if (collision.gameObject.CompareTag("Enemy"))
-        { 
-            Enemydasher otherEnemy = collision.gameObject.GetComponent<Enemydasher>();
-            if (otherEnemy != null)
+        {
+            if (collision.gameObject != this.gameObject)
             {
-                otherEnemy.TakeDamage(1);
+                Enemydasher otherEnemy = collision.gameObject.GetComponent<Enemydasher>();
+                if (otherEnemy != null)
+                {
+                    otherEnemy.TakeDamage(1);
+                }
             }
         }
     }
