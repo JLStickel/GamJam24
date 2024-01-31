@@ -187,6 +187,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3686343748660877068, guid: 36aef8a2ce691e64e827da2fbf05ccb0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 524.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686343748660877068, guid: 36aef8a2ce691e64e827da2fbf05ccb0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 232
+      objectReference: {fileID: 0}
     - target: {fileID: 5257427903057429115, guid: 36aef8a2ce691e64e827da2fbf05ccb0, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -2166,6 +2174,7 @@ Transform:
   - {fileID: 176614025}
   - {fileID: 270027866}
   - {fileID: 2012777320}
+  - {fileID: 8829195587631795747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966913358
@@ -2762,6 +2771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curWave: 1
+  wave1Time: 0
   finishedCurrent: 1
   curObject: 0
   waveSpawnerWave1:
@@ -2775,6 +2785,7 @@ MonoBehaviour:
     - {fileID: 6232387803132725468, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
   spawnPositions:
   - {fileID: 6589034718761314003}
+  waveBar: {fileID: 0}
 --- !u!4 &6589034718761314003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502238415128821137, guid: 1f58a29c88a2eea45957e5d4cf959bbb, type: 3}
@@ -2799,7 +2810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2465631680063465195}
   healthAmount: 3
-  fillSpeed: 1
+  fillSpeed: 5
   Player: {fileID: 1646034463}
 --- !u!1 &7056275360197433231
 GameObject:
