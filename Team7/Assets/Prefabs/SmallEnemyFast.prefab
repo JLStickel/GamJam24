@@ -134,20 +134,20 @@ MonoBehaviour:
   guidd: 
   droppedItems:
   - {fileID: 1278193615406659841, guid: d32326a79b58cb24993d26a197108255, type: 3}
-  speed: 1.7
+  speed: 1.85
   minDistToPoint: 0.2
   curPoint: {fileID: 0}
   patrolPoints: []
   state: 0
   bullet: {fileID: 5913004265787517606, guid: a3280bb0d97dad6448b9b501e098c708, type: 3}
-  shootPos: {fileID: 5929490707967612684}
+  shootPos: {fileID: 5929490707967612684, guid: bf49da9aaa9ff2b4c81e97ca296fca5b, type: 3}
   loadUpTime: 1
   enemyOverlapRadius: 5
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
   seePlayerRadius: 8
-  drawGiz: 0
+  drawGiz: 1
   playerMask:
     serializedVersion: 2
     m_Bits: 64
