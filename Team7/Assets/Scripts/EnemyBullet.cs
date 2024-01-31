@@ -52,10 +52,10 @@ public class EnemyBullet : MonoBehaviour
         curPos = transform.position;
 
         float dist = Vector3.Distance(curPos, oldPos);
-        if(Physics2D.Raycast(oldPos,curPos,dist, playerMask))
-        {
-            PlayerHit();
-        }
+        //if(Physics2D.Raycast(oldPos,curPos,dist, playerMask))
+        //{
+        //    PlayerHit();
+        //}
         
         RaycastHit2D hit= Physics2D.Raycast(oldPos, curPos, dist, enemyMask);
         if (hit == true)

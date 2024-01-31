@@ -7,7 +7,6 @@ public class Upgrades : MonoBehaviour
     private PlayerController player;
     private HealthManager healthM;
     private float maxHealth;
-    public float targetTime = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +14,12 @@ public class Upgrades : MonoBehaviour
         healthM = GameObject.FindGameObjectWithTag("HealthManager").GetComponent<HealthManager>();
         maxHealth = healthM.healthAmount;
     }
-    private void Update()
-    {
-
-    }
 
     public void SetMaxHP()
     {
         healthM.healthAmount = maxHealth;
     }
-
+    
     public void SetMaxHPAndAdd(float val)
     {
         maxHealth += val;
@@ -50,7 +45,4 @@ public class Upgrades : MonoBehaviour
     {
         player.shield.SetActive(true);
     }
-    
 }
-    
-
