@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour
 
     void EndDash()
     {
-        _endDash();
         collider.enabled = true;
         isDashing = false;
         rb.velocity = Vector2.zero;
