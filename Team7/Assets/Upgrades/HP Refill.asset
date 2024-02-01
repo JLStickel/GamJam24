@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: HP Refill
   m_EditorClassIdentifier: 
   UpgradeText: Your HP will be completely refilled
+  upgradeIcon: {fileID: 1825539620, guid: 3bcfa982df583314ba05c02044444427, type: 3}

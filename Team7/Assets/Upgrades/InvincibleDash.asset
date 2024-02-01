@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: InvincibleDash
   m_EditorClassIdentifier: 
   UpgradeText: You are invincible while dashing
+  upgradeIcon: {fileID: 1632876507, guid: 3bcfa982df583314ba05c02044444427, type: 3}
