@@ -87,14 +87,14 @@ public class Tutorialscript : MonoBehaviour
         }
         if (SpaceButton == true && activator == true && activator4 == false)
         {
-            tText1.text = "If you get the slowmotion ability in the arena\r\nYou have to press SHIFT to slow down time and use it to your advantage.\r\n\r\nBe careful though, the cooldown is 10 seconds long!";
+            tText1.text = "If you get the slowmotion upgrade ability in the arena, you have to press SHIFT to slow down time.\r\n\r\nBe careful though, the cooldown is 10 seconds long!";
             slowM = false;
             activator2 = true;
             activator4 = true;
         }
         if (slowM == true && activator2 == true && activator3 == true)
         {
-            tText1.text = "Nice, now go up and make the enemies shoot themselfs.\r\nTry to dodge and use your shild to reflect the bulet back to them\r\nShild cooldown 5 secs\r\nUse rightclick on mouse to use shield";
+            tText1.text = "Nice, now go up and make the enemies shoot themselfs.\r\nTry to dodge and use your shild if you got it as a upgrade, to reflect the bulet back to them\r\nShild cooldown 5 secs\r\nUse rightclick on mouse to use shield";
             activator3 = false;
             Destroy(barrier);
             rightButton = false;
