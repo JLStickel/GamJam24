@@ -28,6 +28,10 @@ public class UpgradeManager : MonoBehaviour
     public TMP_Text Upgrade2Text;
     public TMP_Text Upgrade3Text;
 
+    public Image Upgrade1Img;
+    public Image Upgrade2Img;
+    public Image Upgrade3Img;
+
     public List<UpgradeList> Upgrades = new List<UpgradeList>();
 
     private void Awake()
@@ -75,6 +79,11 @@ public class UpgradeManager : MonoBehaviour
         Upgrade1Text.text = Upgrades[playerXPLevel].upgrade1UI.UpgradeText;
         Upgrade2Text.text = Upgrades[playerXPLevel].upgrade2UI.UpgradeText;
         Upgrade3Text.text = Upgrades[playerXPLevel].upgrade3UI.UpgradeText;
+
+
+        Upgrade1Img.sprite = Upgrades[playerXPLevel].upgrade1UI.upgradeIcon;
+        Upgrade2Img.sprite = Upgrades[playerXPLevel].upgrade2UI.upgradeIcon;
+        Upgrade3Img.sprite = Upgrades[playerXPLevel].upgrade3UI.upgradeIcon;
     }
 
     public void SetXP()

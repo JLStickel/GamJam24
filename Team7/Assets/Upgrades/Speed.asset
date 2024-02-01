@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   UpgradeText: Your speed will increase by 30%
+  upgradeIcon: {fileID: 1632876507, guid: 3bcfa982df583314ba05c02044444427, type: 3}

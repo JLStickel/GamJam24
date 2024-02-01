@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+
     public float speed = 10;
     public float dashForce = 20;
     public float dashDuration = 0.2f;
     public float dashCooldown = 2.0f;
+    public float targetTime = 9000000.0f;
+    public float targetCooldown;
 
-#region Events
+    #region Events
     public delegate void _playerEvents();
     public event _playerEvents _startDash;
     public event _playerEvents _endDash;
@@ -18,7 +21,7 @@ public class PlayerController : MonoBehaviour
 #endregion
 
     Rigidbody2D rb;
-    Collider2D collider;
+    Collider2D playerCollider;
     public float moveHorizontal;
     public float moveVertical;
     public bool canDash = true;
@@ -36,14 +39,18 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        collider = GetComponent<Collider2D>();
+        playerCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         _startDash += EmptyFunction;
+        Time.timeScale = 1f;
+        targetCooldown = 10f;
 
     }
 
     void Update()
     {
+        targetCooldown -= Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
         {
             StartDash();
@@ -52,6 +59,18 @@ public class PlayerController : MonoBehaviour
         if (isDashing && Time.time >= dashTime)
         {
             EndDash();
+        }
+
+        targetTime -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && targetCooldown <= 0f)
+        {
+            SlowMotion();
+            targetCooldown = 10f;
+        }
+        if (targetTime <= 0.0f)
+        {
+            Time.timeScale = 1f;
         }
     }
 
@@ -73,7 +92,7 @@ public class PlayerController : MonoBehaviour
             _startDash();
 
             if (invicibleDash)
-                collider.enabled = false;
+                playerCollider.enabled = false;
             isDashing = true;
             dashTime = Time.time + dashDuration;
 
@@ -88,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     void EndDash()
     {
-        collider.enabled = true;
+        playerCollider.enabled = true;
         isDashing = false;
         rb.velocity = Vector2.zero;
     }
@@ -102,5 +121,10 @@ public class PlayerController : MonoBehaviour
     void EmptyFunction()
     {
 
+    }
+    public void SlowMotion()
+    {
+        targetTime = 2.5f;
+        Time.timeScale = 0.5f;
     }
 }

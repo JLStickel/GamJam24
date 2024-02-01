@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Upgrade_Test");
     }
     public void EndGame()
     {

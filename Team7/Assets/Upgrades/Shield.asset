@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpgradeText: Gives you a shield which you can use with >RIght Mouse Button< to
     relfect bullets
+  upgradeIcon: {fileID: 1957620169, guid: 3bcfa982df583314ba05c02044444427, type: 3}
