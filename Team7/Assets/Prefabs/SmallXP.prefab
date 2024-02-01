@@ -100,6 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roughValue: 5
+  playerRadius: 2.36
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 320
+  speed: 10
 --- !u!61 &5206453622862350375
 BoxCollider2D:
   m_ObjectHideFlags: 0

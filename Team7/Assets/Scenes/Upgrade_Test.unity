@@ -9839,6 +9839,12 @@ MonoBehaviour:
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
     - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
+  - waitTime: 8
+    spawnedObjects:
+    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
+    - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+    - {fileID: 8682691287188044264, guid: 758af228fc1a42944b66673d2130142e, type: 3}
+    - {fileID: 8157257009707738487, guid: bf92dfd3d448cbd4fa4af678cdef4dcb, type: 3}
   spawnPositions:
   - {fileID: 6589034718761314003}
   - {fileID: 319912480}

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 #endregion
 
     Rigidbody2D rb;
-    Collider2D collider;
+    Collider2D playerCollider;
     public float moveHorizontal;
     public float moveVertical;
     public bool canDash = true;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        collider = GetComponent<Collider2D>();
+        playerCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         _startDash += EmptyFunction;
         Time.timeScale = 1f;
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
             _startDash();
 
             if (invicibleDash)
-                collider.enabled = false;
+                playerCollider.enabled = false;
             isDashing = true;
             dashTime = Time.time + dashDuration;
 
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
     void EndDash()
     {
-        collider.enabled = true;
+        playerCollider.enabled = true;
         isDashing = false;
         rb.velocity = Vector2.zero;
     }
