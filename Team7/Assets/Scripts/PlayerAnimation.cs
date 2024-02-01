@@ -7,6 +7,8 @@ public class PlayerAnimation : MonoBehaviour
     public PlayerController _playerReference;
     private Animator _playerAnimator;
     private SpriteRenderer _playerSprite;
+    [SerializeField] private ParticleSystem _dashParticle;
+    private bool _dashActive = false;
 
     private float _direction;
     private int _parameter;
@@ -16,6 +18,10 @@ public class PlayerAnimation : MonoBehaviour
         _playerReference = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         _playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>();
         _playerSprite = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpriteRenderer>();
+        _dashParticle.gameObject.SetActive(false);
+
+        _playerReference._startDash += Dash;
+        _playerReference._endDash += Dash;
 
         _direction = 0;
         _parameter = 0;
@@ -73,6 +79,12 @@ public class PlayerAnimation : MonoBehaviour
     {
         _parameter = 2;
         _playerAnimator.SetInteger("Parameter", _parameter);
+    }
+
+    private void Dash()
+    {
+        _dashActive = !_dashActive;
+        _dashParticle.gameObject.SetActive(_dashActive);
     }
 
 

@@ -746,3 +746,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerReference: {fileID: 0}
+  _dashParticle: {fileID: 0}

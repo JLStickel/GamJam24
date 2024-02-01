@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         collider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        _startDash += EmptyFunction;
 
     }
 
@@ -97,5 +98,10 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    void EmptyFunction()
+    {
+
     }
 }
