@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     public List<Transform> spawnPositions = new List<Transform>();
     public Image waveBar;
     PlayerController player;
+    public GameObject winTxt;
 
     
     // Start is called before the first frame update
@@ -50,16 +51,23 @@ public class Spawner : MonoBehaviour
                         curWave = 2;
                 }
             }
-            if (wave1Time <= 0)
-                ChecklastEnemy();
         }
-    }
 
+        ChecklastEnemy();
+    }
+    public GameObject[] enemiesInScene ;
     public void ChecklastEnemy()
     {
-        if(GameObject.FindGameObjectsWithTag("Enemy").Length<=1)
+
+        
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length==1)
         {
             player.shield.SetActive(true);
+        }
+
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length < 1)
+        {
+            winTxt.SetActive(true);
         }
     }
 }

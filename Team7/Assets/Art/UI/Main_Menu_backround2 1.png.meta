@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f43d56305fcd40c43b2ff3bbb4d0c801
+guid: 2b3f14d4e4411c349b8e0abb2794ebc5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ui_Resstart_Button_0
+      name: Main_Menu_backround2 1_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 47
-        width: 98
-        height: 26
+        x: 299
+        y: 103
+        width: 41
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4097253ecd1e99a4ebfc7379219d50d0
-      internalID: 41270764
+      spriteID: 81667d50a77eaf842a5b33d754c03069
+      internalID: 975126493
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ui_Resstart_Button_0: 41270764
+      Main_Menu_backround2 1_0: 975126493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

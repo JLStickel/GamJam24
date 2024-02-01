@@ -11,9 +11,12 @@ public class HealthManager : MonoBehaviour
     private float healthAmountMax;
     public float fillSpeed = 5f;
     public GameObject Player;
+    public float autoHealSpeed;
+    private float autoHealSpeedStart;
 
     private void Start()
     {
+        autoHealSpeedStart = autoHealSpeed;
         Player = GameObject.FindGameObjectWithTag("Player");
         healthAmountMax = healthAmount;
     }
@@ -32,10 +35,18 @@ public class HealthManager : MonoBehaviour
         // smoother
         float targetFillAmount = healthAmount / healthAmountMax;
         healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, targetFillAmount, Time.deltaTime * fillSpeed);
-        if (healthAmount == 0f)
+        if (healthAmount <= 0f)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //Destroy(Player);
+        }
+
+        autoHealSpeed -= Time.deltaTime;
+        if(autoHealSpeed <= 0)
+        {
+            if (healthAmount < healthAmountMax)
+                healthAmount += .1f;
+            autoHealSpeed = autoHealSpeedStart;
         }
     }
 

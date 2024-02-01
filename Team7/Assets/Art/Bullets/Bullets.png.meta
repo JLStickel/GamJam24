@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f43d56305fcd40c43b2ff3bbb4d0c801
+guid: fac359d252ce3da409bfb3fc1e6515a1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ui_Resstart_Button_0
+      name: Bullets_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 47
-        width: 98
-        height: 26
+        x: 0
+        y: 8
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4097253ecd1e99a4ebfc7379219d50d0
-      internalID: 41270764
+      spriteID: e0aaa0ce6189b7c4ba61272e072d6532
+      internalID: 209523455
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ui_Resstart_Button_0: 41270764
+      Bullets_0: 209523455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shield : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Shield : MonoBehaviour
     private float shieldLoadupTimeStart;
     public float shieldUsageTime  = .3f;
     private float shieldUsageTimeStart;
+
+    public Image reflectImage;
 
     [SerializeField] private GameObject model;
 
@@ -60,10 +63,13 @@ public class Shield : MonoBehaviour
 
             float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+            reflectImage.fillAmount = shieldUsageTime / shieldUsageTimeStart;
         }
         if(!canUseShield)
         {
             shieldLoadupTime -= Time.deltaTime;
+            reflectImage.fillAmount = 1- shieldLoadupTime / shieldLoadupTimeStart;
             if(shieldLoadupTime <= 0)
             {
                 shieldLoadupTime = shieldLoadupTimeStart;
