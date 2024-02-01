@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+
     public float speed = 10;
     public float dashForce = 20;
     public float dashDuration = 0.2f;
@@ -11,10 +13,17 @@ public class PlayerController : MonoBehaviour
     public float targetTime = 9000000.0f;
     public float targetCooldown;
 
+    #region Events
+    public delegate void _playerEvents();
+    public event _playerEvents _startDash;
+    public event _playerEvents _endDash;
+
+#endregion
+
     Rigidbody2D rb;
     Collider2D collider;
-    float moveHorizontal;
-    float moveVertical;
+    public float moveHorizontal;
+    public float moveVertical;
     public bool canDash = true;
     public bool isDashing = false;
     float dashTime;
@@ -25,15 +34,17 @@ public class PlayerController : MonoBehaviour
     DashManager dashManager;
 
     private void Awake()
-    {
+    {     
     }
 
     void Start()
     {
         collider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        _startDash += EmptyFunction;
         Time.timeScale = 1f;
         targetCooldown = 10f;
+
     }
 
     void Update()
@@ -78,6 +89,8 @@ public class PlayerController : MonoBehaviour
     {
         if (canDash)
         {
+            _startDash();
+
             if (invicibleDash)
                 collider.enabled = false;
             isDashing = true;
@@ -105,6 +118,10 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    void EmptyFunction()
+    {
+
+    }
     public void SlowMotion()
     {
         targetTime = 2.5f;
