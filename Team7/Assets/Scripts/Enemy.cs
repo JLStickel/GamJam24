@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private Transform curPoint;
     private int curPointNum;
     public List<Transform> patrolPoints;
+    public Vector3 _patrolDir;
     public enum enemyState
     {
         patrol,
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
     private Transform shootPos;
     public float loadUpTime;
     private float loadUpTimeStart;
+    public Vector3 _shootDir;
 
     [Header("Enemy overlap")]
     public float enemyOverlapRadius;
@@ -44,7 +46,13 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    [Header("Animation")]
+    public Vector3 _animDir;
+
     Rigidbody2D rb;
+
+    public delegate void _enemyEvents();
+    public event _enemyEvents Shot;
 
     private void Awake()
     {
@@ -61,16 +69,23 @@ public class Enemy : MonoBehaviour
         patrolPoints = EnemyManager.Instance.ClosestPatrolPoint(transform.position);
 
         curPoint = patrolPoints[curPointNum];
+        Shot += EmptyFunction;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(state == enemyState.patrol)
+        {
             Patrol();
+            _animDir = _patrolDir;
+        }
 
         if (state == enemyState.shoot)
+        {
             Shoot();
+            _animDir = _shootDir;
+        }
 
         if (hp <= 0)
         {
@@ -84,8 +99,8 @@ public class Enemy : MonoBehaviour
 
     public void Patrol()
     {
-        Vector3 dir = curPoint.position -  transform.position;
-        transform.position += dir.normalized * speed * Time.deltaTime;
+        _patrolDir = curPoint.position -  transform.position;
+        transform.position += _patrolDir.normalized * speed * Time.deltaTime;
         float distanceToPoint = Vector3.Distance(transform.position, curPoint.position);
         if(distanceToPoint < minDistToPoint)
         {
@@ -142,13 +157,14 @@ public class Enemy : MonoBehaviour
     public void Shoot()
     {
         loadUpTime -= Time.deltaTime;
-        Vector3 dir = player.transform.position - transform.position;
-        transform.position += dir.normalized * speed  * Time.deltaTime;
+        _shootDir = player.transform.position - transform.position;
+
+        transform.position += _shootDir.normalized * speed  * Time.deltaTime;
         if (loadUpTime <= 0)
         {
             
             
-            if(!Physics2D.Raycast(transform.position, dir, Vector3.Distance(transform.position,player.transform.position), enemyMask))
+            if(!Physics2D.Raycast(transform.position, _shootDir, Vector3.Distance(transform.position,player.transform.position), enemyMask))
             {
                 SpawnBullet();
             }
@@ -160,6 +176,7 @@ public class Enemy : MonoBehaviour
 
     public void SpawnBullet()
     {
+        Shot();
         Vector3 targ = player.transform.position;
         targ.z = 0f;
 
@@ -204,5 +221,10 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp -= damage;
+    }
+
+    private void EmptyFunction()
+    {
+
     }
 }

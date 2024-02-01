@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 590932414080274308}
   - component: {fileID: 7340651176799041403}
   - component: {fileID: 6928951796216880118}
+  - component: {fileID: 6309726790816538523}
   m_Layer: 0
   m_Name: SpriteObject
   m_TagString: Untagged
@@ -137,6 +138,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6309726790816538523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265625934200789508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c61b017f9aadf4b8754283f10cec02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyReference: {fileID: 1163676361802180246}
+  _enemyAnimator: {fileID: 6928951796216880118}
+  _enemySprite: {fileID: 7340651176799041403}
+  _dir: {x: 0, y: 0, z: 0}
+  _direction: 0
+  _parameter: 0
 --- !u!1 &6232387803132725468
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,10 +211,12 @@ MonoBehaviour:
   minDistToPoint: 0.2
   curPoint: {fileID: 0}
   patrolPoints: []
+  _patrolDir: {x: 0, y: 0, z: 0}
   state: 0
   bullet: {fileID: 5913004265787517606, guid: a3280bb0d97dad6448b9b501e098c708, type: 3}
   shootPos: {fileID: 5929490707967612684}
   loadUpTime: 1
+  _shootDir: {x: 0, y: 0, z: 0}
   enemyOverlapRadius: 5
   enemyMask:
     serializedVersion: 2
@@ -206,6 +227,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   player: {fileID: 0}
+  _animDir: {x: 0, y: 0, z: 0}
 --- !u!61 &7398097408559263563
 BoxCollider2D:
   m_ObjectHideFlags: 0

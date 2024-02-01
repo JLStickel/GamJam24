@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 5603343089711048357}
   - component: {fileID: 9031544751182901517}
   - component: {fileID: 3000957366654651862}
+  - component: {fileID: 1414880942745609200}
   m_Layer: 0
   m_Name: SpriteObject
   m_TagString: Untagged
@@ -137,6 +138,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1414880942745609200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503764285870938002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dbb3b65e9f576944bb7ceb7d3f919df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyReference: {fileID: 1364460271680664434}
+  _enemyAnimator: {fileID: 9031544751182901517}
+  _enemySprite: {fileID: 3000957366654651862}
+  _dir: {x: 0, y: 0, z: 0}
+  _direction: 0
+  _parameter: 0
 --- !u!1 &8157257009707738487
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +184,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.27, y: -2.13, z: 13.227432}
-  m_LocalScale: {x: 1.3801, y: 1.3801, z: 1.3801}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1909788269731745152}
@@ -201,6 +220,8 @@ MonoBehaviour:
   dashForce: 5
   dashDuration: 0.2
   healthManager: {fileID: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!61 &8176579570400071422
 BoxCollider2D:
   m_ObjectHideFlags: 0

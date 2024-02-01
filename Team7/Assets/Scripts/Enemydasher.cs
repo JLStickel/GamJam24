@@ -41,7 +41,11 @@ public class Enemydasher : MonoBehaviour
     public float dashDuration = 0.2f;
 
     public HealthManager healthManager;
+    public delegate void _dashEnemyEvents();
+    public event _dashEnemyEvents Attack;
 
+    public Vector3 targetPos;
+    public Vector3 dir;
 
     private void Awake()
     {
@@ -53,7 +57,7 @@ public class Enemydasher : MonoBehaviour
     }
     void Start()
     {
-
+        Attack += EmptyFunction;
         patrolPoints = EnemyManager.Instance.ClosestPatrolPoint(transform.position);
 
         curPoint = patrolPoints[curPointNum];
@@ -82,7 +86,7 @@ public class Enemydasher : MonoBehaviour
         if (!isDashing)
         {
             
-            Vector3 dir = player.transform.position - transform.position;
+             dir = player.transform.position - transform.position;
             transform.position += dir.normalized * speed / 3 * Time.deltaTime;
            
         }
@@ -120,10 +124,12 @@ public class Enemydasher : MonoBehaviour
 
     void StartDash()
     {
+
+        Attack();
         isDashing = true;
 
         Vector3 startPos = transform.position;
-        Vector3 targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(10f, Vector3.Distance(transform.position, player.transform.position));
+        targetPos = transform.position + (player.transform.position - transform.position).normalized * Mathf.Min(10f, Vector3.Distance(transform.position, player.transform.position));
         dashTime = Time.time + dashDuration;
 
         StartCoroutine(DashCoroutine(startPos, targetPos));
@@ -173,6 +179,11 @@ public class Enemydasher : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp -= damage;
+    }
+
+    private void EmptyFunction()
+    {
+
     }
 }
 
